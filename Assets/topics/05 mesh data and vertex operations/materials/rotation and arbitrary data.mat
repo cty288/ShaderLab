@@ -21,7 +21,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _rotX: 0
+    - _rotX: 0.32
     - _rotY: 0
     - _rotZ: 0
     m_Colors: []

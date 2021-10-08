@@ -21,7 +21,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _morph: 0.09
+    - _morph: 1
     - _radius: 12.4
     m_Colors: []
   m_BuildTextureStacks: []

@@ -21,7 +21,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _displacement: 0.1
+    - _displacement: 0.0065
     - _scale: 62.4
     - _seed: 48486.39
     - _timeInfluence: 1.5

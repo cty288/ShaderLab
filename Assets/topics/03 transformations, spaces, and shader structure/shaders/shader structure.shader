@@ -8,12 +8,12 @@ Shader "examples/week 3/shader structure"
         // variable name  ("text description", type) = (default value)
         _Color ("a color", Color) = (1, 1, 1, 1)
         _Texture ("a texture", 2D) = "white" {}
-        _Float("a number", Float) = 1
-        _Range("a range", Range(0, 1)) = 0.5
-        _Vector("a vector", Vector) = (1, 1, 1, 1)
+        _Float ("a number", Float) = 1
+        _Range ("a range", Range(0, 1)) = 0.5
+        _Vector ("a vector", Vector) = (1, 1, 1, 1)
     }
     
-        
+
     // shaders can contain more than one SubShader, but unless you're doing way more advanced stuff targeting different capabilities of different GPU hardware, you'll only need one.
     SubShader
     {
@@ -32,11 +32,10 @@ Shader "examples/week 3/shader structure"
 
             // defining our properties and variables in the shader
             float4 _Color;
-            sampler2D _Texture;
+            float4 _Texture;
             float _Float;
             float _Range;
             float4 _Vector;
-            
             
             // a struct used to define what data we'll use from the mesh
             struct MeshData
@@ -46,7 +45,6 @@ Shader "examples/week 3/shader structure"
                 float4 color : COLOR;     // vertex color input
                 float2 uv0 : TEXCOORD0;   // vertex uv0 input
                 float2 uv1 : TEXCOORD1;   // vertex uv1 input
-                float2 uv2 : TEXCOORD2;
             };
 
             // a struct used to define what data we're passing from the vertex shader to the fragment shader
@@ -58,23 +56,18 @@ Shader "examples/week 3/shader structure"
                 float4 color : TEXCOORD1;
                 float2 uv0 : TEXCOORD2;
                 float2 uv1 : TEXCOORD3;
-                float3 myColor:TEXCOORD4;
             };
 
-            //quad: 4 vertex; run 4 times
-            //view space: space relative to camera
-            //clip space: where on the screen to render (2d)
             Interpolators vert (MeshData v)
             {
                 Interpolators o;
                 o.vertex = UnityObjectToClipPos(v.vertex); // transforms object space vertex position to clip space position. UnityObjectToClipPos() is code that we get by using UnityCG.cginc
-                o.uv0 = v.uv2;
                 return o;
             }
 
             float4 frag (Interpolators i) : SV_Target // SV_Target is a shader semantic that is referring to a render target
             {
-                return float4(i.uv0.x,0,i.uv0.y,1);
+                return _Color;
             }
             ENDCG
         }
