@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: displacement
+  m_Shader: {fileID: 4800000, guid: a9dabe03cf0c74e87a3ddbfea0e0a528, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _albedo:
+        m_Texture: {fileID: 2800000, guid: 4034495bbd23544aa893e50ef8f121ce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _displacementMap:
+        m_Texture: {fileID: 2800000, guid: 725a49dd066f34ba2bb30f01516b5398, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _normalMap:
+        m_Texture: {fileID: 2800000, guid: 964369987c99b476eb34aa4e5479eec6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _displacementIntensity: 0.25
+    - _gloss: 0.523
+    - _normalIntensity: 1
+    - _specularContrast: 32
+    - _specularIntensity: 1
+    m_Colors: []
+  m_BuildTextureStacks: []

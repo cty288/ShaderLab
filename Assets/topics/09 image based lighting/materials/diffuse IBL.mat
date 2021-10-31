@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: diffuse IBL
+  m_Shader: {fileID: 4800000, guid: d4158594ba3a54f7f9efabda53183367, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IBL:
+        m_Texture: {fileID: 8900000, guid: 67fc12ac8848a42579f4c8216a65af7a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _albedo:
+        m_Texture: {fileID: 2800000, guid: e602f0d52907543abb61acfe3294c77e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _diffuseIBL:
+        m_Texture: {fileID: 2800000, guid: ec97039e22695492d800494105f97b23, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _displacementMap:
+        m_Texture: {fileID: 2800000, guid: 558ab00108751416e8602b6f6da470a6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _normalMap:
+        m_Texture: {fileID: 2800000, guid: fec17e2837efd489b8f67971177a1f22, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _displacementIntensity: 0.374
+    - _gloss: 0.553
+    - _normalIntensity: 0.53
+    - _specularContrast: 32
+    - _specularIntensity: 1
+    m_Colors: []
+  m_BuildTextureStacks: []

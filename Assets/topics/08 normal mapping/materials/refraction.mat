@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: refraction
+  m_Shader: {fileID: 4800000, guid: 62adc40e33ef44bb7a98bcc1e9fd8a95, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _albedo:
+        m_Texture: {fileID: 2800000, guid: cb16b24b36b9b44dab621abffe21b776, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _displacementMap:
+        m_Texture: {fileID: 2800000, guid: 317845e43b4eb43a1bb2d17b3ed0d696, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _normalMap:
+        m_Texture: {fileID: 2800000, guid: d8285627fa5ba4e20a41912a42a5ffee, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _displacementIntensity: 0.075
+    - _gloss: 0.537
+    - _normalIntensity: 0.201
+    - _opacity: 0.471
+    - _refractionIntensity: 0.561
+    - _specularContrast: 32
+    - _specularIntensity: 1
+    m_Colors:
+    - _color: {r: 0.5235849, g: 0.70769066, b: 1, a: 1}
+    - _tint: {r: 0.3443396, g: 0.56112236, b: 1, a: 1}
+  m_BuildTextureStacks: []

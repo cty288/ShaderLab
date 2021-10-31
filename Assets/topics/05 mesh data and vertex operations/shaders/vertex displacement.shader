@@ -65,13 +65,13 @@
             Interpolators vert (MeshData v)
             {
                 Interpolators o;
-                o.uv = v.uv;
+                
 
                 float height = fractal_noise((o.uv+_Time.x)* _scale) * _displacement;
                 v.vertex.xyz += v.normal * height;
-
+               
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                
+                o.uv = v.uv;
                 return o;
             }
 

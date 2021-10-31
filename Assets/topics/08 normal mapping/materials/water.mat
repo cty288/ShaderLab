@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: water
+  m_Shader: {fileID: 4800000, guid: 559585ea39f1d4bc6b605a9f3f32f478, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _albedo:
+        m_Texture: {fileID: 2800000, guid: 39385e1ecf24c4d31baa1fa25828ba12, type: 3}
+        m_Scale: {x: 3, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _displacementMap:
+        m_Texture: {fileID: 2800000, guid: 44fabf7668d38457693df5e26dde988d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _normalMap:
+        m_Texture: {fileID: 2800000, guid: 97550067fb33948389b156a689041852, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _displacementIntensity: 0.218
+    - _gloss: 0.67
+    - _normalIntensity: 0.743
+    - _opacity: 0.187
+    - _refractionIntensity: 0.499
+    - _specularContrast: 100
+    - _specularIntensity: 1
+    - _vortexDepth: 1
+    - _vortexRadius: 1
+    m_Colors:
+    - _pan: {r: 1, g: 2, b: 5, a: 5}
+    - _vortexCenter: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
