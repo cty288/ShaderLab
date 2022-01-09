@@ -11,7 +11,6 @@
         // brightness of specular reflection - proportion of color contributed by diffuse and specular
         // reflectivity at 1, color is all specular
         _reflectivity ("reflectivity", Range(0,1)) = 0.5
-
         _fresnelPower ("fresnel power", Range(0, 10)) = 5
         _normalIntensity ("normal intensity", Range(0, 1)) = 1
         _displacementIntensity ("displacement intensity", Range(0, 0.5)) = 0

@@ -34,10 +34,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _displacementIntensity: 0.218
-    - _gloss: 0.67
+    - _gloss: 0.292
     - _normalIntensity: 0.743
-    - _opacity: 0.187
-    - _refractionIntensity: 0.499
+    - _opacity: 0.161
+    - _refractionIntensity: 0.267
     - _specularContrast: 100
     - _specularIntensity: 1
     - _vortexDepth: 1

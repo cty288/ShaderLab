@@ -33,14 +33,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _displacementIntensity: 0.075
-    - _gloss: 0.537
-    - _normalIntensity: 0.201
-    - _opacity: 0.471
-    - _refractionIntensity: 0.561
+    - _displacementIntensity: 0.006
+    - _gloss: 1
+    - _normalIntensity: 0.193
+    - _opacity: 0
+    - _refractionIntensity: 0.195
     - _specularContrast: 32
     - _specularIntensity: 1
     m_Colors:
     - _color: {r: 0.5235849, g: 0.70769066, b: 1, a: 1}
-    - _tint: {r: 0.3443396, g: 0.56112236, b: 1, a: 1}
+    - _tint: {r: 0.2584905, g: 1, b: 0.87205327, a: 1}
   m_BuildTextureStacks: []

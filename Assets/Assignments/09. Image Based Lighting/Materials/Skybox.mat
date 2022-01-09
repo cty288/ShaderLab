@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Skybox
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 4107af35c033c1d469d5fe824a0f5041, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -73,7 +73,32 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - _auroraInensity: 0.273
+    - _auroraStrength: 0.698
+    - _cloudIntensity: 0.271
+    - _cloudRotationSpeed: 0.15
+    - _contrast: 1
+    - _fresnelPower: 10
+    - _gloss: 0.712
+    - _lowerSkyHeight: 1
+    - _moonRadius: 0.08
+    - _offset: 0
+    - _reflectivity: 1
+    - _skyboxMinimumHeight: -0.09
+    - _starDensity: 0.00182
+    - _starRotationSpeed: 0.337
+    - _starSize: 0.323
+    - _upperSkyHeight: 0.7
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _auroraColor1: {r: 0, g: 1, b: 0.19908333, a: 1}
+    - _auroraColor2: {r: 0.98431396, g: 0, b: 1, a: 1}
+    - _cloudColor: {r: 0.65471697, g: 0.87507194, b: 1, a: 1}
+    - _colorHigh: {r: 0.201424, g: 0.19309363, b: 0.2264151, a: 1}
+    - _colorLow: {r: 0, g: 0, b: 0, a: 1}
+    - _colorNormal: {r: 0.19743523, g: 0.14291562, b: 0.3490566, a: 1}
+    - _moonColor: {r: 1, g: 1, b: 0.40943396, a: 1}
+    - _moonCoord: {r: 0.91, g: 0.24, b: -0.06, a: 0}
+    - _starColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

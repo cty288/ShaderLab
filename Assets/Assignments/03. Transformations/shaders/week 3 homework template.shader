@@ -38,6 +38,7 @@
             struct MeshData
             {
                 float4 vertex : POSITION;
+                
                 float2 uv : TEXCOORD0;
             };
 
@@ -45,6 +46,7 @@
             {
                 float4 vertex : SV_POSITION;
                 float2 uv : TEXCOORD0;
+               
             };
 
             float3 circle(float2 uv, float2 pos, float radius, float3 color,float2 uv2) {
@@ -121,7 +123,9 @@
             Interpolators vert (MeshData v)
             {
                 Interpolators o;
+               
                 o.vertex = UnityObjectToClipPos(v.vertex);
+               
                 o.uv = v.uv;
                 return o;
             }

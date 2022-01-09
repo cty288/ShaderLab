@@ -71,6 +71,7 @@
                 //float3 indirectSpecular = texCUBElod(_IBL,float4(viewReflection,mip)) * _reflectivity;
                 float3 indirectSpecular = UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, viewReflection, mip )
                 *_reflectivity;
+               
 
                 color = indirectSpecular;
                 

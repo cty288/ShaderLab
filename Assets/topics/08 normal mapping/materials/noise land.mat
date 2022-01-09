@@ -25,14 +25,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _displacement: 1.09
+    - _displacement: 1.04
     - _highElevation: 0.18
     - _intensity: 0.074
     - _lowElevation: -0.12
     - _midElevation: 0.07
-    - _scale: 3.1
+    - _scale: 2
     m_Colors:
-    - _highColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
-    - _lowColor: {r: 0.6415094, g: 0.23285563, b: 0, a: 1}
-    - _midColor: {r: 1, g: 0.43406513, b: 0.20188677, a: 1}
+    - _highColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+    - _lowColor: {r: 0.41509432, g: 0.17290023, b: 0.03681023, a: 1}
+    - _midColor: {r: 0.3301887, g: 0.09711432, b: 0, a: 1}
   m_BuildTextureStacks: []

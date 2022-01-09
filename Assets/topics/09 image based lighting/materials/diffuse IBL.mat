@@ -41,9 +41,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _displacementIntensity: 0.374
-    - _gloss: 0.553
-    - _normalIntensity: 0.53
+    - _displacementIntensity: 0.324
+    - _gloss: 0.323
+    - _normalIntensity: 0.749
     - _specularContrast: 32
     - _specularIntensity: 1
     m_Colors: []

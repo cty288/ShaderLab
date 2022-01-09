@@ -2,19 +2,15 @@
 {
     Properties 
     {
-        _albedo ("albedo", 2D) = "black" {}
+        _albedo ("albedo", 2D) = "white" {}
         [NoScaleOffset] _normalMap ("normal map", 2D) = "bump" {}
         [NoScaleOffset] _displacementMap ("displacement map", 2D) = "white" {}
         _gloss ("gloss", Range(0,1)) = 1
         _normalIntensity ("normal intensity", Range(0, 1)) = 1
         _displacementIntensity ("displacement intensity", Range(0,1)) = 0.5
         _refractionIntensity ("refraction intensity", Range(0, 0.5)) = 0.1
-        _pan("Pan",Vector) = (0,0,0,0)
+        _pan ("pan", Vector) = (0, 0, 0, 0)
         _opacity ("opacity", Range(0,1)) = 0.9
-
-        _vortexCenter("Vortex Center",Vector)=(0,0,0,0) //use only x and z
-        _vortexRadius("Vortex Radius", Float) = 1.0
-        _vortexDepth("Vortex Depth",Float)=1.0
     }
     SubShader
     {
@@ -40,14 +36,13 @@
             sampler2D _normalMap;
             sampler2D _displacementMap;
             sampler2D _BackgroundTex;
+            float4 _pan;
             float _gloss;
             float _normalIntensity;
             float _displacementIntensity;
             float _refractionIntensity;
             float _opacity;
-            float4 _pan;
 
-         
             struct MeshData
             {
                 float4 vertex : POSITION;
@@ -74,10 +69,11 @@
             {
                 Interpolators o;
                 o.uv = TRANSFORM_TEX(v.uv, _albedo);
-               
-
+                
                 // panning
-                o.uvPan = _pan * _Time.x;
+                o.uvPan = _pan * _Time.x; //float4(_pan.xy * _Time.x, _pan.zw * _Time.x);
+
+                // add our panning to our displacement texture sample
                 float height = tex2Dlod(_displacementMap, float4(o.uv + o.uvPan.xy, 0, 0)).r;
                 v.vertex.xyz += v.normal * height * _displacementIntensity;
 
@@ -94,27 +90,31 @@
                 return o;
             }
 
-            //the water effect made in class
-            float3 normal_water(float2 uv, float2 screenUV, Interpolators i) {
-                //blend normals
+            float4 frag (Interpolators i) : SV_Target
+            {
+                float2 uv = i.uv;
+                float2 screenUV = i.screenUV.xy / i.screenUV.w;
+
+
                 float3 tangentSpaceNormal = UnpackNormal(tex2D(_normalMap, uv + i.uvPan.xy));
                 float3 tangentSpaceDetailNormal = UnpackNormal(tex2D(_normalMap, (uv * 5) + i.uvPan.zw));
                 tangentSpaceNormal = BlendNormals(tangentSpaceNormal, tangentSpaceDetailNormal);
 
-                tangentSpaceNormal = normalize(lerp(float3(0, 0, 1), tangentSpaceNormal, _normalIntensity));
 
-                float3x3 tangentToWorld = float3x3
-                    (
-                        i.tangent.x, i.bitangent.x, i.normal.x,
-                        i.tangent.y, i.bitangent.y, i.normal.y,
-                        i.tangent.z, i.bitangent.z, i.normal.z
-                        );
+                tangentSpaceNormal = normalize(lerp(float3(0, 0, 1), tangentSpaceNormal, _normalIntensity));
+                
+                float2 refractionUV = screenUV.xy + (tangentSpaceNormal.xy * _refractionIntensity);
+                float3 background = tex2D(_BackgroundTex, refractionUV);
+
+                float3x3 tangentToWorld = float3x3 
+                (
+                    i.tangent.x, i.bitangent.x, i.normal.x,
+                    i.tangent.y, i.bitangent.y, i.normal.y,
+                    i.tangent.z, i.bitangent.z, i.normal.z
+                );
 
                 float3 normal = mul(tangentToWorld, tangentSpaceNormal);
 
-                //refraction
-                float2 refractionUV = screenUV.xy + (tangentSpaceNormal.xy * _refractionIntensity);
-                float3 background = tex2D(_BackgroundTex, refractionUV);
 
                 // blinn phong
                 float3 surfaceColor = tex2D(_albedo, uv + i.uvPan.xy).rgb;
@@ -131,18 +131,7 @@
                 float3 specular = pow(specularFalloff, _gloss * MAX_SPECULAR_POWER + 0.0001) * _gloss * lightColor;
                 float3 diffuse = diffuseFalloff * surfaceColor * lightColor;
 
-                //waterfall
-                
-                return (diffuse * _opacity) + (background * (1 - _opacity)) + specular;
-            }
-
-            float4 frag (Interpolators i) : SV_Target
-            {
-                float2 uv = i.uv;
-                float2 screenUV = i.screenUV.xy / i.screenUV.w;
-
-                float3 color = normal_water(uv,screenUV, i);
-                
+                float3 color = (diffuse * _opacity) + (background * (1 - _opacity)) + specular;
                 return float4(color, 1);
             }
             ENDCG
